@@ -39,19 +39,7 @@
       background-color: #333;
       border-radius: 2px;
     }
-    
-    /* Header Logo (Hamburger menünün hemen yanında) */
-    .header-logo {
-      position: fixed;
-      top: 5px;
-      left: 60px;
-      z-index: 1100;
-      transition: display 0.3s ease;
-    }
-    .header-logo img {
-      height: 120px; /* 3 kat büyüttüm */
-    }
-    
+
     /* Sol Yan Menü (sidebar) */
     .sidebar {
       position: fixed;
@@ -94,9 +82,13 @@
       right: 20px;
       text-align: center;
     }
-    .sidebar-logo img {
-      max-width: 100%;
-      height: auto;
+    .sidebar-logo {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
     }
     
     /* Hızlı Rezervasyon Butonu: Sağ Üst Köşe */
@@ -118,9 +110,33 @@
       background-color: #cc0000;
     }
 
-    /* Header Logo'yu gizleme (sidebar açıldığında) */
-    .sidebar.active ~ .header-logo {
-      display: none;
+    /* Hürm-et Yazısı Altında Siyah Dikdörtgen */
+    .hurmet {
+      position: fixed;
+      top: 90px;  /* Hızlı rezervasyon butonunun altına yerleştirildi */
+      right: 10px;
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      z-index: 1040;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    /* Sol Menüdeki Hürm-et Yazısı için Yeni Dikdörtgen */
+    .sidebar-logo {
+      position: absolute;
+      bottom: 100px; /* 100px yukarı çektim */
+      left: 20px;
+      right: 20px;
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
     }
   </style>
 </head>
@@ -130,11 +146,6 @@
     <span></span>
     <span></span>
     <span></span>
-  </div>
-  
-  <!-- Header Logo: Hamburger menünün hemen yanında -->
-  <div class="header-logo">
-    <img src="Logo.jpeg" alt="Logo">
   </div>
   
   <!-- Sol Yan Menü -->
@@ -149,13 +160,18 @@
     </ul>
     <!-- Sidebar Logo: Sol menünün alt kısmında -->
     <div class="sidebar-logo">
-      <img src="Logo.jpeg" alt="Logo">
+      Hürm-et
     </div>
   </div>
   
   <!-- Hızlı Rezervasyon Butonu -->
   <a href="rezervasyon.html" class="reservation">Hızlı Rezervasyon</a>
-  
+
+  <!-- Hürm-et Yazısı -->
+  <div class="hurmet">
+    Hürm-et
+  </div>
+
   <!-- Hero Bölümü -->
   <div class="hero"></div>
   
