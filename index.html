@@ -1,168 +1,164 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mükemmel Steakhouse Deneyimi</title>
-  <meta name="description" content="Steak müdavimleri için en üstün deneyim: Hürm-et, uluslararası gastronomi harikaları, baştan çıkarıcı ambiyans ve şovlar steakhouse deneyimini zirveye yükseltmek.">
-  <meta name="keywords" content="restaurant, steak">
-  <style>
-    /* Temel sıfırlamalar */
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
-    
-    /* Hero Bölümü: Tüm ekranı kaplayan arka plan */
-    .hero {
-      width: 100%;
-      height: 100vh;
-      background: url('main.jpg') center/cover no-repeat;
-      position: relative;
-    }
-    
-    /* Menü İkonu */
-    .menu-icon {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 25px;
-      cursor: pointer;
-      z-index: 1100;
-    }
-    .menu-icon span {
-      display: block;
-      height: 4px;
-      background-color: #333;
-      border-radius: 2px;
-    }
-    
-    /* Header Logo (Hamburger menünün hemen yanında) */
-    .header-logo {
-      position: fixed;
-      top: 10px;
-      left: 50px;
-      z-index: 1100;
-    }
-    .header-logo img {
-      height: 40px; /* Boyutu isteğe göre ayarlayabilirsiniz */
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-      border: 2px solid #fff;
-      border-radius: 5px;
-    }
-    
-    /* Sol Yan Menü (sidebar) */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 16.66%;
-      height: 100%;
-      background-color: #000; /* Siyah tema */
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 1000;
-      padding: 70px 20px 60px 20px; /* Üstte 70px (hamburger'dan uzak) ve altta 60px boşluk */
-    }
-    .sidebar.active {
-      transform: translateX(0);
-    }
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .sidebar li a {
-      display: block;
-      padding: 15px 10px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.2rem; /* Yazı boyutu büyütüldü */
-      border-bottom: 1px solid #444; /* Seçenekleri ayıran çizgi */
-    }
-    .sidebar li a:hover {
-      background-color: #333;
-      color: #ccc;
-    }
-    
-    /* Sidebar Logo (Sol menünün alt kısmında) */
-    .sidebar-logo {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      text-align: center;
-    }
-    .sidebar-logo img {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    /* Hızlı Rezervasyon Butonu: Sağ Üst Köşe */
-    .reservation {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background-color: #ff0000;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      z-index: 1050;
-      text-decoration: none;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-    .reservation:hover {
-      background-color: #cc0000;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mükemmel Steakhouse Deneyimi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #000;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .hamburger {
+            font-size: 30px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: width 0.4s ease;
+            padding-top: 60px;
+            z-index: 20;
+            white-space: nowrap;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ccc;
+            display: block;
+            transition: color 0.3s;
+            border-bottom: 1px solid #333;
+        }
+
+        .sidebar a:hover {
+            color: #fff;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            font-size: 36px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .reservation-btn {
+            background-color: #ff0000;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .reservation-btn:hover {
+            background-color: #cc0000;
+        }
+
+        .sidebar-open + .logo {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .bottom-logo {
+            width: 120px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar a {
+                font-size: 16px;
+            }
+
+            .reservation-btn {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .bottom-logo {
+                width: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Menü İkonu -->
-  <div class="menu-icon" id="menuIcon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  
-  <!-- Header Logo: Hamburger menünün hemen yanında -->
-  <div class="header-logo">
-    <img src="Logo.jpeg" alt="Logo">
-  </div>
-  
-  <!-- Sol Yan Menü -->
-  <div class="sidebar" id="sidebar">
-    <ul>
-      <li><a href="#">Hüseyin Altuntaş ile tanışın</a></li>
-      <li><a href="#">Restoranlara tanışın</a></li>
-      <li><a href="#">Yemeklerle tanışın</a></li>
-      <li><a href="#">Finansal veriler</a></li>
-      <li><a href="#">İş başvurusu</a></li>
-      <li><a href="#">Galeri</a></li>
-    </ul>
-    <!-- Sidebar Logo: Sol menünün alt kısmında -->
-    <div class="sidebar-logo">
-      <img src="Logo.jpeg" alt="Logo">
-    </div>
-  </div>
-  
-  <!-- Hızlı Rezervasyon Butonu -->
-  <a href="rezervasyon.html" class="reservation">Hızlı Rezervasyon</a>
-  
-  <!-- Hero Bölümü -->
-  <div class="hero"></div>
-  
-  <script>
-    const menuIcon = document.getElementById('menuIcon');
-    const sidebar = document.getElementById('sidebar');
-    
-    menuIcon.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-    });
-  </script>
+
+<div class="navbar">
+    <span class="hamburger" onclick="openNav()">&#9776;</span>
+    <img src="Logo.jpeg" alt="Logo" class="logo">
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Hüseyin Altuntaş ile Tanışın</a>
+    <a href="#">Restoranlara Tanışın</a>
+    <a href="#">Yemeklerle Tanışın</a>
+    <a href="#">Finansal Veriler</a>
+    <a href="#">İş Başvurusu</a>
+    <a href="#">Galeri</a>
+    <img src="Logo.jpeg" alt="Logo" class="bottom-logo">
+</div>
+
+<div class="main-content">
+    <img src="main.jpg" alt="Main Image" style="width: 100%; height: auto;">
+    <button class="reservation-btn">Hızlı Rezervasyon</button>
+</div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.querySelector('.logo').classList.add('sidebar-open');
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.querySelector('.logo').classList.remove('sidebar-open');
+    }
+</script>
+
 </body>
 </html>
