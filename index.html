@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Mükkemel Steakhouse Deneyimi</title>
+  <title>Mükemmel Steakhouse Deneyimi</title>
   <meta name="description" content="Steak müdavimleri için en üstün deneyim: Hürm-et, uluslararası gastronomi harikaları, baştan çıkarıcı ambiyans ve şovlar steakhouse deneyimini zirveye yükseltmek.">
   <meta name="keywords" content="restaurant, steak">
   <style>
@@ -74,7 +74,7 @@
       color: #555;
     }
     
-    /* Hızlı Rezervasyon Düğmesi: Sağ Üst Köşe */
+    /* Hızlı Rezervasyon Butonu: Sağ Üst Köşe */
     .reservation {
       position: fixed;
       top: 10px;
@@ -87,6 +87,10 @@
       font-weight: bold;
       z-index: 1050;
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      text-decoration: none;
+    }
+    .reservation:hover {
+      background-color: #cc0000; /* Daha koyu kırmızı ton */
     }
   </style>
 </head>
@@ -104,17 +108,17 @@
     <ul>
       <li><a href="#">Hüseyin Altuntaş ile tanışın</a></li>
       <li><a href="#">Restoranlara tanışın</a></li>
-      <li><a href="#">yemeklerle tanışın</a></li>
+      <li><a href="#">Yemeklerle tanışın</a></li>
       <li><a href="#">Finansal veriler</a></li>
       <li><a href="#">İş başvurusu</a></li>
       <li><a href="#">Galeri</a></li>
     </ul>
   </div>
   
-  <!-- Hızlı Rezervasyon Düğmesi -->
-  <div class="reservation">
+  <!-- Hızlı Rezervasyon Butonu -->
+  <a href="rezervasyon.html" class="reservation">
     Hızlı Rezervasyon
-  </div>
+  </a>
   
   <!-- Hero Bölümü: Tüm Ekranı Kaplayan Arka Plan -->
   <div class="hero"></div>
