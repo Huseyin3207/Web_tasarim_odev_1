@@ -6,7 +6,21 @@
   <meta name="description" content="Steak müdavimleri için en üstün deneyim: Hürm-et, uluslararası gastronomi harikaları, baştan çıkarıcı ambiyans ve şovlar steakhouse deneyimini zirveye yükseltmek.">
   <meta name="keywords" content="restaurant, steak">
   <style>
-    /* Menü ikonu container'ı */
+    /* Temel sıfırlamalar */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Hero Bölümü: Tüm ekranı kaplayan arka plan */
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background: url('main.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    
+    /* Menü İkonu */
     .menu-icon {
       position: fixed;
       top: 10px;
@@ -20,7 +34,6 @@
       z-index: 1100;
     }
     
-    /* Menü ikonundaki çizgiler */
     .menu-icon span {
       display: block;
       height: 4px;
@@ -28,12 +41,12 @@
       border-radius: 2px;
     }
     
-    /* Sol yan menü (sidebar) */
+    /* Sol Yan Menü (sidebar) */
     .sidebar {
       position: fixed;
       top: 0;
       left: 0;
-      width: 16.66%; /* Ekranın 1/6'sı */
+      width: 16.66%;
       height: 100%;
       background-color: #f8f8f8;
       transform: translateX(-100%);
@@ -43,22 +56,38 @@
       padding: 20px;
     }
     
-    /* Menü aktif olduğunda sidebar görünür */
     .sidebar.active {
       transform: translateX(0);
     }
     
-    /* Logo kapsayıcı: üst orta kısım */
-    .logo {
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .sidebar li {
+      margin: 15px 0;
+      font-size: 16px;
+    }
+    
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.2s;
+    }
+    
+    .sidebar a:hover {
+      color: #555;
+    }
+    
+    /* Steak Görseli: Sağ Üst Köşe */
+    .steak-logo {
       position: fixed;
       top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
+      right: 10px;
       z-index: 1050;
-    }
-    .logo img {
-      max-width: 150px; /* İhtiyacınıza göre boyutu ayarlayabilirsiniz */
-      height: auto;
+      max-width: 150px; /* Boyutunu ihtiyaca göre ayarlayabilirsiniz */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* main.jpg ile uyumlu hoş bir efekt için */
     }
   </style>
 </head>
@@ -68,11 +97,6 @@
     <span></span>
     <span></span>
     <span></span>
-  </div>
-  
-  <!-- Üst Orta Kısımda Logo -->
-  <div class="logo">
-    <img src="IMG-20250316-WA0002[1].png" alt="Logo">
   </div>
   
   <!-- Sol Yan Menü -->
@@ -88,10 +112,18 @@
     </ul>
   </div>
   
+  <!-- Steak Görseli: Sağ Üst Köşede -->
+  <div class="steak-logo">
+    <img src="steak.jpeg" alt="Steak" style="width: 100%; height: auto;">
+  </div>
+  
+  <!-- Hero Bölümü: Tüm Ekranı Kaplayan Arka Plan -->
+  <div class="hero"></div>
+  
   <script>
     const menuIcon = document.getElementById('menuIcon');
     const sidebar = document.getElementById('sidebar');
-
+    
     menuIcon.addEventListener('click', () => {
       sidebar.classList.toggle('active');
     });
